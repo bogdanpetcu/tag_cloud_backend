@@ -1,4 +1,4 @@
-This is a simple backend for a tag-cloud item written in Python.
+This is a simple backend for a tag-cloud service written in Python.
 
 The program requires a runnig instance of a Redis database. 
 The details (localhost and port) of this database should be specified in the setup.py file.
@@ -15,4 +15,4 @@ python tag_cloud.py <number_of_seconds_to_run> <maximum_number_of_words> <remove
 
 You have to specify at least the first parameter.
 If you specify the second parameter as an integer X the first X numbers will be stored in the database individualy and all of the following words will only increment the value of the "Other" category.
-If you do not specify the third parameter which should be a boolean value the program will automaticaly clear the database when finished. You may specify it as false if you want to cumulate the statistics in several runnings of the program.
+If you do not specify the third parameter which should be a boolean value the program will automaticaly clear the database when finished. You may specify it as 'False' if you want to cumulate the statistics in several runnings of the program.
