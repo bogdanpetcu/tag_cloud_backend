@@ -1,0 +1,18 @@
+This is a simple backend for a tag-cloud item written in Python.
+
+The program requires a runnig instance of a Redis database. 
+The details (localhost and port) of this database should be specified in the setup.py file.
+For demo purposes you can run the prequisites.sh script which installs all needed tools (including a Redis server instance). Considering the fact this script also starts the Redis instance and the fact that the default values in the setup.py file match a local instance of Redis you are now able to run the program. For later use of the program all you have to do is to start the Redis database and run the program.
+
+OBS: The prerequisites.sh file is tested on a Ubuntu 14.04. If you are using other OS and the script fails, this is what you need in order to get the program running:
+	- a running Redis instance: http://redis.io/topics/quickstart ;
+	- tweepy: https://github.com/tweepy/tweepy ;
+	- redis-py: https://github.com/andymccurdy/redis-py ;
+
+For runnig the program:
+python tag_cloud.py <number_of_seconds_to_run> <maximum_number_of_words> <remove_colected_data_when_finished>
+
+
+You have to specify at least the first parameter.
+If you specify the second parameter as an integer X the first X numbers will be stored in the database individualy and all of the following words will only increment the value of the "Other" category.
+If you do not specify the third parameter which should be a boolean value the program will automaticaly clear the database when finished. You may specify it as false if you want to cumulate the statistics in several runnings of the program.
